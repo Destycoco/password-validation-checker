@@ -6,14 +6,16 @@ passwordInput.addEventListener("input", updateMeter)
 
 function updateMeter(){
 	const weaknesses = calcPasswordStrength(passwordInput.value);
-	console.log(weaknesses);
 	let strength = 100;
-	// console.log(strength)
+	let displaymessage = document.createElement('div');
+	reasons.innerHTML = "";
 	weaknesses.forEach(weakness =>{
-	if (weakness == null) return
-	strength -= weakness.deduction;
+
+		if (weakness == null) return;
+		strength -= weakness.deduction;
+		displaymessage.innerText = weakness.message;
+		reasons.appendChild(displaymessage);
 	})
-	console.log(strength);
 	strengthMeter.style.setProperty("--strength", strength);
 }
 
@@ -27,7 +29,20 @@ function calcPasswordStrength(password){
 
 function lengthWeakness(password){
 	let length = password.length;
-	if (length <= 5){
+	if (length === 0 ){
+		return{
+			message: "",
+			deduction: 100
+		}
+	}
+	if (length <= 3 ){
+		return{
+			message: "Your password is too short",
+			deduction: 60
+		}
+	}
+
+	if (length <= 5 ){
 		return{
 			message: "Your password is too short",
 			deduction: 40
