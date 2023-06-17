@@ -58,7 +58,6 @@ function lengthWeakness(password){
 		}
 	}
 }
-
 function lowercaseWeakness(password){
 	const matches = password.match(/[a-z]/g) || []
 
@@ -99,9 +98,7 @@ function symbolWeakness(password){
 			deduction: 20
 		}
 	}
-	
 }
-
 togglePassword.addEventListener("click", ()=>{
    const type = passwordInput.getAttribute("type") === "text" ? "password" : "text";
    passwordInput.setAttribute("type", type);

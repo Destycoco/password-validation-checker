@@ -5,17 +5,14 @@
 }
 :root{
 	font-size: 100%;
-	/* --strength: 100; */
 }
 body{
-	/* text-align: center; */
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 	background-color: hsl(241, 83%, 60%);
 	position: relative;
 	min-height: 100vh;
 	width: 100vw;
-
 }
 .password-section{
 	margin-top: 7%;
@@ -103,18 +100,3 @@ body{
 	cursor: pointer;
 
 }
-
-
-/* .icon-input{
-	background-image: url(images/eye-look-icon.png);
-	background-size: 2rem;
-	background-repeat: no-repeat;
-	/* padding-right: 10px; */
-	/* background-position: 60% center; */
-	/* cursor: pointer; */
-	/* z-index: 100; */
-	/* position: absolute; */
-	
-
-
-/* } */ */
