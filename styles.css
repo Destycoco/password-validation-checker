@@ -52,6 +52,7 @@ body{
 	outline: none;
 	border: 2px solid hsl(240, 84%, 60%);
 	border-radius: 8px;
+	position: relative;
 }
 .container input:focus{
 	border: 3px solid hsl(240, 84%, 60%);
@@ -76,4 +77,44 @@ body{
 	top:0;
 	left: 0;
 	background-color: hsl(240, 84%, 60%);
+	transition: width 200ms;
 }
+.reasons{
+	color:hsl(240, 84%, 60%);
+	font-size: 1.5rem;
+	padding-top: .75rem;
+}
+.password-container{
+	position: relative;
+}
+#password{
+	padding-right: 35px;
+}
+.icon{
+	position: absolute;
+	top: 55%;
+	right: 31%;
+	transform: translateY(-55%);
+}
+.password-container .icon i{
+	font-size: 1.4rem;
+	padding-top: 8px;
+	color:hsl(240, 84%, 60%);
+	cursor: pointer;
+
+}
+
+
+/* .icon-input{
+	background-image: url(images/eye-look-icon.png);
+	background-size: 2rem;
+	background-repeat: no-repeat;
+	/* padding-right: 10px; */
+	/* background-position: 60% center; */
+	/* cursor: pointer; */
+	/* z-index: 100; */
+	/* position: absolute; */
+	
+
+
+/* } */ */

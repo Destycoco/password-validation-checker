@@ -1,6 +1,8 @@
 const passwordInput = document.getElementById("password");
 const strengthMeter = document.querySelector(".strength-meter");
 const reasons = document.querySelector(".reasons");
+const togglePassword = document.querySelector(".icon");
+
 
 passwordInput.addEventListener("input", updateMeter)
 
@@ -19,11 +21,12 @@ function updateMeter(){
 	strengthMeter.style.setProperty("--strength", strength);
 }
 
-
-
 function calcPasswordStrength(password){
 	const weaknesses = [];
 	weaknesses.push(lengthWeakness(password));
+	weaknesses.push(lowercaseWeakness(password));
+	weaknesses.push(uppercaseWeakness(password));
+	weaknesses.push(symbolWeakness(password));
 	return weaknesses;
 }
 
@@ -55,3 +58,58 @@ function lengthWeakness(password){
 		}
 	}
 }
+function lowercaseWeakness(password){
+	const matches = password.match(/[a-z]/g) || []
+
+	if (!matches.length){
+		return{
+			message: "Your password does not contain a lower case",
+			deduction: 40
+		}
+	}
+	if (matches.length <= 2){
+		return{
+			message: "Your password could contain more lower case",
+			deduction: 20
+		}
+	}
+}
+function uppercaseWeakness(password){
+
+	const matches = password.match(/[A-Z]/g) || []
+	if (matches.length == 0){
+		return{
+			message: "Your password does not contain an upper case",
+			deduction: 30
+		}
+	}
+	if (matches.length < 2){
+		return{
+			message: "Your password could contain more upper case",
+			deduction: 10
+		}
+	}
+}
+function symbolWeakness(password){
+	const matches = password.match(/[-+*/$#@&!%^=<>()_]/g) || []
+	if (!matches.length){
+		return{
+			message: "Your password does not contain a symbol",
+			deduction: 20
+		}
+	}
+	
+}
+togglePassword.addEventListener("click", ()=>{
+   const type = passwordInput.getAttribute("type") === "text" ? "password" : "text";
+   passwordInput.setAttribute("type", type);
+})
+
+
+
+
+
+
+
+
+
