@@ -28,16 +28,39 @@ body{
 	background-color: hsl(240, 84%, 90%);
 	text-align: center;
 	padding: 2%;
+	backface-visibility: hidden;
 }
 .container h1{
 	color:hsl(241, 83%, 60%);
 	font-size: 3rem;
 	font-weight: 700;
+	animation: uptodown .85s ease-in ;
 }
+@keyframes uptodown{
+	0%{
+		transform: translateY(-60px);
+		opacity: 0.4;
+	}
+	50%{
+		transform: translateY(20px);
+		opacity: 0.6;
+	}
+	80%{
+		transform: translateY(-20px);
+		opacity: 1;
+	}
+	50%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+
 .container label{
 	font-size: 2rem;
 	color:hsl(240, 84%, 60%);
 	font-weight: 500;
+	
 }
 .container input{
 	width: 40%;
@@ -81,7 +104,9 @@ body{
 	color:hsl(240, 84%, 60%);
 	font-size: 1.5rem;
 	padding-top: .75rem;
+	
 }
+
 .password-container{
 	position: relative;
 }
