@@ -1,0 +1,44 @@
+*::after, *::before, *{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+:root{
+	font-size: 100%;
+}
+body{
+	/* text-align: center; */
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	background-color: hsl(241, 83%, 60%);
+	position: relative;
+	min-height: 100vh;
+	width: 100vw;
+
+}
+.container{
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	min-height: 30%;
+	transform: translate(-50%,-30%);
+	width: 50%;
+	margin: auto;
+	background-color: red;
+	text-align: center;
+}
+.container h1{
+	color:hsl(241, 83%, 95%);
+	font-size: 3rem;
+	font-weight: 700;
+}
+.container label{
+	font-size: 2rem;
+	color:hsl(241, 83%, 95%)
+}
+.container input{
+	width: 40%;
+	height: 2.5rem;
+	font-size: 1.5rem;
+	text-align: center;
+}
