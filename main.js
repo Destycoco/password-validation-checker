@@ -23,13 +23,13 @@ function updateMeter(){
 
 function calcPasswordStrength(password){
 	const weaknesses = [];
-	weaknesses.push(lengthWeakness(password));
+	
 	weaknesses.push(lowercaseWeakness(password));
 	weaknesses.push(uppercaseWeakness(password));
 	weaknesses.push(symbolWeakness(password));
+	weaknesses.push(lengthWeakness(password));
 	return weaknesses;
 }
-
 function lengthWeakness(password){
 	let length = password.length;
 	if (length === 0 ){
@@ -58,6 +58,7 @@ function lengthWeakness(password){
 		}
 	}
 }
+
 function lowercaseWeakness(password){
 	const matches = password.match(/[a-z]/g) || []
 
@@ -100,6 +101,7 @@ function symbolWeakness(password){
 	}
 	
 }
+
 togglePassword.addEventListener("click", ()=>{
    const type = passwordInput.getAttribute("type") === "text" ? "password" : "text";
    passwordInput.setAttribute("type", type);
