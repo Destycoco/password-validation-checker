@@ -20,25 +20,44 @@ body{
 	position: absolute;
 	top: 30%;
 	left: 50%;
-	min-height: 30%;
+	min-height: 35%;
 	transform: translate(-50%,-30%);
 	width: 50%;
 	margin: auto;
-	background-color: red;
+	background-color: hsl(240, 84%, 90%);
 	text-align: center;
 }
 .container h1{
-	color:hsl(241, 83%, 95%);
+	color:hsl(241, 83%, 60%);
 	font-size: 3rem;
 	font-weight: 700;
 }
 .container label{
 	font-size: 2rem;
-	color:hsl(241, 83%, 95%)
+	color:hsl(240, 84%, 60%);
+	font-weight: 500;
 }
 .container input{
 	width: 40%;
 	height: 2.5rem;
 	font-size: 1.5rem;
 	text-align: center;
+	margin-top: .75rem;
+	background-color: hsl(240, 84%, 85%);
+	color:hsl(240, 84%, 60%);
+	outline: none;
+	border: 2px solid hsl(240, 84%, 60%);
+	border-radius: 8px;
+}
+.container input:focus{
+	border: 3px solid hsl(240, 84%, 60%);
+}
+.strength-meter{
+	width: 40%;
+	height: 2rem;
+	background-color: hsl(240, 84%, 90%);
+	border: 2px solid hsl(240, 84%, 60%);
+	margin: auto;
+	margin-top: 1.2rem;
+	border-radius: 1rem;
 }
