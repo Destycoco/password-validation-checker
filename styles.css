@@ -148,9 +148,14 @@ body{
 	}
 	.container h1{
 		color:hsl(241, 83%, 60%);
-		font-size: 2.5rem;
+		font-size: 2rem;
 		font-weight: 700;
 	}
+	.container label{
+		font-size: 1.5rem;
+	}
+	.reasons{
+		font-size: 1.2rem;
 }
 @media (max-width: 768px){
 	:root{
